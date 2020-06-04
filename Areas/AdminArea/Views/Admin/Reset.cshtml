@@ -1,0 +1,13 @@
+﻿@model YG.AdminArea.ViewModels.AdminVMs.ResetVM
+
+    <wt:form vm="@Model">
+        <wt:quote>确定要重置用户密码？</wt:quote>
+        <wt:hidden field="Entity.ID" />
+        <wt:hidden field="Entity.Password" />
+        <wt:hidden field="Entity.ITCode" />
+        <wt:hidden field="Entity.Name" />
+        <wt:row align="AlignEnum.Right">
+            <wt:submitbutton />
+            <wt:closebutton />
+        </wt:row>
+    </wt:form>

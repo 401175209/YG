@@ -1,0 +1,14 @@
+﻿@model YG.OrganArea.ViewModels.OrganVMs.OrganVM
+
+<wt:form vm="@Model">
+<wt:row items-per-row="ItemsPerRowEnum.Two">
+<wt:textbox field="Entity.OrganCode" />
+<wt:textbox field="Entity.OrganName" />
+<wt:combobox field="Entity.ParentId" items="AllParents"/>
+</wt:row>
+    <wt:hidden field="Entity.ID" />
+    <wt:row align="AlignEnum.Right">
+        <wt:submitbutton />
+        <wt:closebutton />
+    </wt:row>
+</wt:form>

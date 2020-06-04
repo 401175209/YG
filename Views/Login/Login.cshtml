@@ -1,0 +1,158 @@
+﻿@model YG.ViewModels.HomeVMs.LoginVM
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>登入 - 电子定位监管平台</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/layuiadmin/style/admin.css" media="all">
+    <link rel="stylesheet" href="/sitecss/login.css" media="all">
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+</head>
+<body>
+
+    <div id="messageboxshow">@Model.MSD.GetFirstError()</div>
+    <form action="/Login/Login" method="post">
+        <input type="hidden" name="Token">
+        <input type="hidden" name="Redirect" value="@Model.Redirect">
+        <div id="UpdatePanel1">
+
+            <div class="logintop">
+                <img src="/images/bigbg.jpg" width="100%" height="100%">
+            </div>
+            <div class="loginbot">
+                <div class="float">
+                    <img src="/images/logo.png" width="747" height="190">
+                </div>
+                <div class="floatr">
+                    <table width="600" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td height="40">
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+
+
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50" class="zi_001">
+                                用户名
+                            </td>
+                            <td>
+                                <input type="text" name="ITCode" value="@Model.ITCode" placeholder="请输入用户名" class="layui-input">
+                            </td>
+                            <td width="40" class="zi_001">
+                                密码
+                            </td>
+                            <td>
+                                <input type="password" name="Password" value="@Model.Password" placeholder="请输入密码" class="layui-input">
+                            </td>
+                            <td width="100" class="sub">
+                                <button class="layui-btn layui-btn-fluid" type="submit">登录</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="25" colspan="5">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="zi_002">
+                                技术问题及设备采购:13304529286 &nbsp;&nbsp; 业务问题请与相关部门联系&nbsp;&nbsp;
+                               <!-- <a id="a_click" class="mac">获取标识码</a> -->
+                                <input type="text" style="height:0;visibility:hidden;" id="mac" name="MacDid" class="layui-input">
+                            </td>
+
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+    <script src="/layui/layui.js"></script>
+    <script src="/jquery.min.js"></script>
+    <script>if (window != window.top) {
+            window.top.location = location;
+        }</script>
+    <script>layui.config({
+            base: '/layuiadmin/' //静态资源所在路径
+        }).use(['layer'], function () {
+            var $ = layui.$;
+
+
+
+            var txt = $('#messageboxshow').text();
+            if (txt != "") {
+                layer.open({
+                    type: 1
+                    , title: false //不显示标题栏
+                    , closeBtn: false
+                    , area: '200px;'
+                    , shade: 0.5
+                    , id: 'LAY_layuipromsg' //设定一个id，防止重复弹出
+                    , btn: ['确定']
+                    , btnAlign: 'c'
+                    , moveType: 1 //拖拽模式，0或者1
+                    , content: '<div style="padding: 20px; line-height: 22px; background-color: #1b427d; color: #fff; font-weight: 300;">系统提示！<br><br>' + txt + '!<br></div>'
+                    , success: function (layero) {
+                        $('#messageboxshow').text("");
+                    }
+                });
+            }
+
+
+        });</script>
+    <script>
+    //   $(function () {
+    //        var locator = new ActiveXObject("WbemScripting.SWbemLocator");
+     //       var service = locator.ConnectServer(".");
+     ///       var properties = service.ExecQuery("SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled=TRUE");
+      //      var e = new Enumerator(properties);
+       //     var p = e.item();
+       //     var mac = p.MACAddress;
+        //    $('#mac').val(mac.replace(/:/g, ""));
+         //   $("#a_click").click(function () {
+         ///       layer.open({
+           //         type: 1
+            //        , title: false //不显示标题栏
+             //       , closeBtn: false
+             //       , area: '200px;'
+               //     , shade: 0.5
+                ///    , id: 'LAY_layuipromsgmac' //设定一个id，防止重复弹出
+                  //  , btn: ['确定']
+                 ///   , btnAlign: 'c'
+                 //   , moveType: 1 //拖拽模式，0或者1
+                  //  , content: '<div style="padding: 20px; line-height: 22px; background-color: #1b427d; color: #fff; font-weight: 300;">系统标识码<br><br>' + mac.replace(/:/g, "") + '<br></div>'
+                  //  , success: function (layero) {
+                //    }
+               // });
+           // });
+       // });
+    </script>
+
+</body>
+
+</html>

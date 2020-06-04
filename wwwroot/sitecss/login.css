@@ -1,0 +1,74 @@
+
+
+/*-------------------login--------------------------*/
+.logintop {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 139px;
+}
+
+.loginbot {
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    right: 0;
+    height: 139px;
+    background-color: /*#19365e*/ #1b427d
+    /*background:url(../images/footbg.jpg) left top repeat-x;*/
+}
+
+    .loginbot .float {
+        position: absolute;
+        left: 20px;
+        top: -60px;
+    }
+
+    .loginbot .floatr {
+        position: absolute;
+        right: 20px;
+    }
+
+        .loginbot .floatr table td {
+            text-align: left;
+        }
+
+
+.zi_001 {
+    COLOR: white;
+    FONT-WEIGHT: bold;
+    padding-left: 15px;
+}
+
+.sub {
+    padding-left: 15px;
+}
+
+.k_001 {
+    BORDER: #b8c3cc 1px solid;
+    HEIGHT: 22px;
+    width: 170px;
+    line-height: 22px;
+}
+
+.zi_002 {
+    color: #999999;
+    font-weight: 300;
+    font-size: 16px;
+    text-align: right !important;
+    padding-right: 20px;
+}
+
+.mac {
+    color: #999999;
+    font-weight: 300;
+    font-size: 16px;
+    text-align: right !important;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.zi_002 a {
+    color: white;
+}

@@ -1,0 +1,19 @@
+﻿@model YG.AdminArea.ViewModels.AdminVMs.AdminVM
+
+<wt:form vm="@Model">
+<wt:row items-per-row="ItemsPerRowEnum.Two">
+<wt:display field="Entity.Organ.OrganName" />
+<wt:display field="Entity.MAC" />
+<wt:display field="Entity.ITCode" />
+<wt:display field="Entity.Name" />
+<wt:display field="Entity.Sex" />
+<wt:display field="Entity.CellPhone" />
+<wt:display field="Entity.PhotoId" label-text="签名" />
+<wt:display field="Entity.IsValid" />
+
+
+</wt:row>
+    <wt:row align="AlignEnum.Right">
+        <wt:closebutton />
+    </wt:row>
+</wt:form>

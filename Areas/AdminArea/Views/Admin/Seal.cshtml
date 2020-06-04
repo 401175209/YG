@@ -1,0 +1,21 @@
+﻿@model YG.AdminArea.ViewModels.AdminVMs.SealVM
+
+    <wt:form vm="@Model">
+        <wt:row items-per-row="ItemsPerRowEnum.Two">
+
+            <wt:upload show-preview="true" field="Entity.Seal1Id" />
+            <wt:upload show-preview="true" field="Entity.Seal2Id" />
+           
+        </wt:row>
+        <wt:row items-per-row="ItemsPerRowEnum.Two">
+
+           
+            <wt:upload show-preview="true" field="Entity.Seal3Id" />
+            <wt:upload show-preview="true" field="Entity.Seal4Id" />
+        </wt:row>
+        <wt:hidden field="Entity.ID" />
+        <wt:row align="AlignEnum.Right">
+            <wt:submitbutton />
+            <wt:closebutton />
+        </wt:row>
+    </wt:form>

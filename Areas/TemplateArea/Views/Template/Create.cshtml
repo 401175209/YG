@@ -1,0 +1,24 @@
+﻿@model YG.TemplateArea.ViewModels.TemplateVMs.TemplateVM
+
+<wt:form vm="@Model">
+    <wt:row items-per-row="ItemsPerRowEnum.Two">
+        <wt:textbox field="Entity.Description" />
+        <wt:textbox field="Entity.Name" />
+    </wt:row>
+    <wt:row id="TemplateKeys" items-per-row="ItemsPerRowEnum.One">
+        <iframe style="width:100%;height:700px" src="@Model.Entity.Context">
+
+        </iframe>
+      
+    </wt:row>
+    <wt:row align="AlignEnum.Right">
+        <wt:submitbutton />
+        <wt:closebutton />
+    </wt:row>
+    <script>
+        $(document).ready(function () {
+
+            
+        });
+    </script>
+</wt:form>

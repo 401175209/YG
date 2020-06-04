@@ -1,0 +1,10 @@
+﻿@model YG.WorkArea.ViewModels.WorkVMs.WorkListVM
+
+<wt:searchpanel vm="@Model" reset-btn="true">
+<wt:row items-per-row="ItemsPerRowEnum.Three">
+<wt:textbox field="Searcher.Name" />
+<wt:combobox field="Searcher.WithDraw" empty-text="全部" />
+<wt:combobox field="Searcher.WorkStatus" empty-text="全部" />
+</wt:row>
+</wt:searchpanel>
+<wt:grid vm="@Model" url="/WorkArea/Work/Search"/>

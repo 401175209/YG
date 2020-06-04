@@ -1,0 +1,21 @@
+﻿@model YG.AdminArea.ViewModels.AdminVMs.AdminVM
+
+<wt:form vm="@Model">
+<wt:row items-per-row="ItemsPerRowEnum.Two">
+<wt:combobox field="Entity.OrganId" items="AllOrgans"/>
+<wt:textbox field="Entity.MAC" />
+<wt:textbox field="Entity.ITCode" />
+<wt:textbox field="Entity.Name" />
+<wt:combobox field="Entity.Sex" />
+<wt:textbox field="Entity.CellPhone" />
+<wt:upload field="Entity.PhotoId" label-text="签名" />
+<wt:combobox field="Entity.IsValid" />
+<wt:checkbox field="SelectedUserRolesIDs" items="AllUserRoless"/>
+<wt:checkbox field="SelectedUserGroupsIDs" items="AllUserGroupss"/>
+</wt:row>
+    <wt:hidden field="Entity.ID" />
+    <wt:row align="AlignEnum.Right">
+        <wt:submitbutton />
+        <wt:closebutton />
+    </wt:row>
+</wt:form>

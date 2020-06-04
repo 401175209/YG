@@ -1,0 +1,15 @@
+﻿@model YG.WorkArea.ViewModels.WorkVMs.WorkVM
+
+<wt:form vm="@Model">
+<wt:row items-per-row="ItemsPerRowEnum.Two">
+<wt:display field="Entity.Name" />
+<wt:display field="Entity.WithDraw" />
+<wt:display field="Entity.Starter.CodeAndName" />
+<wt:display field="Entity.Receiver.CodeAndName" />
+<wt:display field="Entity.WorkStatus" />
+<wt:display field="Entity.Template.Name" />
+</wt:row>
+    <wt:row align="AlignEnum.Right">
+        <wt:closebutton />
+    </wt:row>
+</wt:form>

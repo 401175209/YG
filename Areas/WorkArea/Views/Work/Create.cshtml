@@ -1,0 +1,46 @@
+﻿@model YG.WorkArea.ViewModels.WorkVMs.WorkVM
+
+    <wt:form vm="@Model">
+        <wt:panel title="事务简介" collapsed="false">
+            <wt:row items-per-row="ItemsPerRowEnum.Three">
+                <wt:textbox field="Entity.Name" />
+                <wt:combobox field="Entity.TemplateId" items="AllTemplates" change-func="Template" />
+                <wt:combobox field="Entity.ReceiverId" items="AllReceivers" />
+            </wt:row>
+        </wt:panel>
+        <wt:panel title="事务内容" collapsed="false">
+
+            <div class="layui-row" id="TemplateKeys">
+
+            </div>
+        </wt:panel>
+    <wt:row align="AlignEnum.Right">
+        <wt:submitbutton />
+        <wt:closebutton />
+    </wt:row>
+    <script>
+        function Template(data) {
+
+            $.ajax({
+                url: '/TemplateArea/Template/GetContext?id=' + data.value,
+                type: 'GET',
+                success: function (res) {
+                    $("#TemplateKeys").html("");
+                    for (let i = 0; i < res.length; i++) {
+                        
+                        var content =
+                            '<div class="layui-col-md4">'+
+                            ' <div class="layui-form-item">' +
+                            '<label for="WorkVM_Entity_Name" class="layui-form-label">' + res[i]+'</label>'+
+                                '<div class="layui-input-block">'+
+                            '<input type="text" name="' + res[i]+'" value="" placeholder="" class="layui-input" >'+
+                                '</div></div></div>';
+                           
+                        $("#TemplateKeys").append(content);
+                    }
+                }
+            });
+
+        }
+    </script>
+    </wt:form>

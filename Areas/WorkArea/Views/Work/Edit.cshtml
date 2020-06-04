@@ -1,0 +1,17 @@
+﻿@model YG.WorkArea.ViewModels.WorkVMs.WorkVM
+
+<wt:form vm="@Model">
+<wt:row items-per-row="ItemsPerRowEnum.Two">
+<wt:textbox field="Entity.Name" />
+<wt:combobox field="Entity.WithDraw" />
+<wt:combobox field="Entity.StarterId" items="AllStarters"/>
+<wt:combobox field="Entity.ReceiverId" items="AllReceivers"/>
+<wt:combobox field="Entity.WorkStatus" />
+<wt:combobox field="Entity.TemplateId" items="AllTemplates"/>
+</wt:row>
+    <wt:hidden field="Entity.ID" />
+    <wt:row align="AlignEnum.Right">
+        <wt:submitbutton />
+        <wt:closebutton />
+    </wt:row>
+</wt:form>

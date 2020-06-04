@@ -1,0 +1,16 @@
+﻿@model YG.TemplateArea.ViewModels.TemplateVMs.TemplateVM
+
+<wt:form vm="@Model">
+    <wt:row items-per-row="ItemsPerRowEnum.Two">
+        <wt:textbox field="Entity.Description" />
+        <wt:textbox field="Entity.Name" />
+    </wt:row>
+        <wt:row items-per-row="ItemsPerRowEnum.One">
+            <wt:ueditor hide-label="true" field="Entity.Context" />
+        </wt:row>
+        <wt:hidden field="Entity.ID" />
+        <wt:row align="AlignEnum.Right">
+            <wt:submitbutton />
+            <wt:closebutton />
+        </wt:row>
+</wt:form>
